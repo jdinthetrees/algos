@@ -69,9 +69,12 @@ var lengthOfObservedSubstring = function(s) {
         let char = s.charAt(j);
         if(!set.has(char)) {
             set.add(char);
+            //moves j to the right expands the window
             j++;
+            //count is the difference between end of the window and the beginning of the window
             count = Math.max (count, j-i);
         } else {
+            //moves i (left part of sliding window)
             set.delete(s.charAt(i));
             i++;
         }
