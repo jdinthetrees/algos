@@ -29,3 +29,57 @@ let longestSubstring = function(str) {
 }
 
 console.log(longestSubstring("abcabcbb"));//outputs 3
+
+var lengthOfObservedSubstring = function(s) {
+
+    let count = 0;
+
+    for (let i =0; i< s.length; i++) {
+        let char = s.charAt(i);
+        let set = new Set([char]);
+        //create another loop to check following characters as long as set contains nonrepeating characters
+        for(let j=i+1; j<s.length; j++) {
+            let char = s.charAt(j);
+            if(set.has(char)) {
+                break;
+            } else {
+                set.add(char)
+            }
+            count = Math.max(count, set.size);
+        }
+    }
+    return count;
+}
+
+let result = lengthOfObservedSubstring('abcabcbb');
+console.log(result);
+
+//sliding window method
+
+var lengthOfObservedSubstring = function(s) {
+    let count = 0;
+    //index of start of window
+    let i = 0;
+    // index of end of the window
+    let j = 0;
+    let n = s.length;
+    let set = new Set();
+
+    while (i < n && j < n) {
+        let char = s.charAt(j);
+        if(!set.has(char)) {
+            set.add(char);
+            j++;
+            count = Math.max (count, j-i);
+        } else {
+            set.delete(s.charAt(i));
+            i++;
+        }
+    }
+
+
+    return count;
+}
+
+let result = lengthOfObservedSubstring('abcabcbb');
+console.log(result);
