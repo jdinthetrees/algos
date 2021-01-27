@@ -1,9 +1,10 @@
 function validAnagram(str1, str2) {
-    //strings font match then imediately return false.
+    //strings dont match then immediately return false.
   if (str1.length !== str2.length) {
     return false;
   }
 
+  //we will create an object that will breakdown the string
   const lookup = {};
 
   for (let i = 0; i < str1.length; i++) {
