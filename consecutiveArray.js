@@ -7,7 +7,7 @@
 // https://www.byte-by-byte.com/consecutivearray/
 
 
-function consectiveArray(arr){
+function consecutiveArray(arr){
     // sort the array
     arr.sort((a, b) => a - b); 
     let count = 1, max = 0; 
@@ -31,7 +31,7 @@ function consectiveArray(arr){
     return max;
 }
 
-console.log(consectiveArray([4, 2, 1, 6, 5]));  //should return 3
-console.log(consectiveArray([5, 5, 3, 1])); //should return 1
-console.log(consectiveArray([9, 8, 7, 6, 5, 4, 3, 2, 1])) // should return 9
-console.log(consectiveArray([1, 3, 5, 7, 9, 11])); //should return 1
+console.log(consecutiveArray([4, 2, 1, 6, 5]));  //should return 3
+console.log(consecutiveArray([5, 5, 3, 1])); //should return 1
+console.log(consecutiveArray([9, 8, 7, 6, 5, 4, 3, 2, 1])) // should return 9
+console.log(consecutiveArray([1, 3, 5, 7, 9, 11])); //should return 1
